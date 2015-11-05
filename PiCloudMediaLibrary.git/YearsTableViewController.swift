@@ -43,7 +43,6 @@ class YearsTableViewController: UITableViewController {
                 switch identifier {
                 case "2010": ivc.imageURL = PiURL.duemilaDieci
                 ivc.title = "Foto scattate nel 2010"
-                print("segue partita")
                 case "2011": ivc.imageURL = PiURL.duemilaUndici
                 ivc.title = "Foto scattate nel 2011"
                 default: break

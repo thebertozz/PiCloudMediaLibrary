@@ -8,7 +8,22 @@
 
 import UIKit
 
-class ImageViewController: UIViewController {
+class ImageViewController: UIViewController, UIScrollViewDelegate {
+    
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.contentSize = imageView.frame.size
+            scrollView.delegate = self
+            scrollView.minimumZoomScale = 0.3
+            scrollView.maximumZoomScale = 1.0
+        }
+    }
+    
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
     
     private var imageView = UIImageView()
     
@@ -26,20 +41,31 @@ class ImageViewController: UIViewController {
         set {
             imageView.image = newValue
             imageView.sizeToFit()
+            scrollView?.contentSize = imageView.frame.size
+            spinner?.stopAnimating()
         }
     }
     
+    
     private func fetchImage() {
         
-        if let url = imageURL {
+    if let url = imageURL {
+        spinner?.startAnimating()
+        let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
+        dispatch_async(dispatch_get_global_queue(qos, 0)) { () -> Void in
             let imageData = NSData(contentsOfURL: url)
-            if imageData != nil {
-                image = UIImage(data: imageData!)
-            } else {
-              image = nil
+            dispatch_async(dispatch_get_main_queue()) {
+                    if url == self.imageURL {
+                if imageData != nil {
+                    self.image = UIImage(data: imageData!)
+                    } else {
+                        self.image = nil
+                    }
+                }
             }
         }
     }
+}
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -50,7 +76,7 @@ class ImageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(imageView)
+        scrollView.addSubview(imageView)
 
     }
 
