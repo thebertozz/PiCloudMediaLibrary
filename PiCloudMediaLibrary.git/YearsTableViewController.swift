@@ -11,6 +11,7 @@ import UIKit
 // MARK: - YearsTableViewController
 
 class YearsTableViewController: UITableViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,22 @@ class YearsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 11
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let ivc = segue.destinationViewController as? ImageViewController {
+            if let identifier = segue.identifier {
+                switch identifier {
+                case "2010": ivc.imageURL = PiURL.duemilaDieci
+                ivc.title = "Foto scattate nel 2010"
+                print("segue partita")
+                case "2011": ivc.imageURL = PiURL.duemilaUndici
+                ivc.title = "Foto scattate nel 2011"
+                default: break
+                }
+            }
+        }
+    }
+
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

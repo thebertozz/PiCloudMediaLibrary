@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Scegli un anno per visualizzare le foto-->
+        <!--Seleziona un anno per visualizzare le foto:-->
         <scene sceneID="KLU-fK-7Hw">
             <objects>
                 <tableViewController id="ksE-z2-9HD" customClass="YearsTableViewController" customModule="PiCloudMediaLibrary_git" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,17 +16,17 @@
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="Anni" id="gZY-AX-YtQ">
+                            <tableViewSection id="gZY-AX-YtQ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="BEV-r0-mbQ">
-                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="2005" rowHeight="44" id="BEV-r0-mbQ">
+                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BEV-r0-mbQ" id="anF-zy-AW0">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clearsContextBeforeDrawing="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2005" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jec-0Q-O2z">
-                                                    <rect key="frame" x="9" y="11" width="583" height="21"/>
+                                                <label opaque="NO" clearsContextBeforeDrawing="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2005" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jec-0Q-O2z">
+                                                    <rect key="frame" x="8" y="12" width="583" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -35,22 +35,24 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="Jec-0Q-O2z" firstAttribute="top" secondItem="anF-zy-AW0" secondAttribute="topMargin" constant="3" id="9nc-r7-oz9"/>
-                                                <constraint firstItem="Jec-0Q-O2z" firstAttribute="leading" secondItem="anF-zy-AW0" secondAttribute="leadingMargin" constant="1" id="QUl-Sq-x2E"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Jec-0Q-O2z" secondAttribute="bottom" constant="3" id="VT0-hA-n7V"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Jec-0Q-O2z" secondAttribute="trailing" id="gdO-go-gfZ"/>
+                                                <constraint firstItem="Jec-0Q-O2z" firstAttribute="leading" secondItem="anF-zy-AW0" secondAttribute="leadingMargin" id="7nn-bw-wvL"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Jec-0Q-O2z" secondAttribute="trailing" constant="-32" id="PeX-Kj-CWu"/>
+                                                <constraint firstItem="Jec-0Q-O2z" firstAttribute="top" secondItem="anF-zy-AW0" secondAttribute="topMargin" constant="4" id="Rpc-0a-SUR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="ADd-FN-5gw" kind="show" id="Dpn-ew-CxJ"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hHe-TH-FBf">
-                                        <rect key="frame" x="0.0" y="158" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="2006" id="hHe-TH-FBf">
+                                        <rect key="frame" x="0.0" y="143" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hHe-TH-FBf" id="2Ed-T8-77Z">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2006" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8k-BU-eIY">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2006" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8k-BU-eIY">
                                                     <rect key="frame" x="9" y="11" width="583" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -60,23 +62,25 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="d8k-BU-eIY" firstAttribute="top" secondItem="2Ed-T8-77Z" secondAttribute="topMargin" constant="3" id="3Xe-R3-azT"/>
-                                                <constraint firstItem="d8k-BU-eIY" firstAttribute="leading" secondItem="2Ed-T8-77Z" secondAttribute="leadingMargin" constant="1" id="CBL-RX-CSO"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="d8k-BU-eIY" secondAttribute="trailing" id="GR9-5h-EbH"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="d8k-BU-eIY" secondAttribute="bottom" constant="3" id="khP-CQ-2jj"/>
+                                                <constraint firstItem="d8k-BU-eIY" firstAttribute="leading" secondItem="2Ed-T8-77Z" secondAttribute="leadingMargin" constant="1" id="19J-Xc-R05"/>
+                                                <constraint firstItem="d8k-BU-eIY" firstAttribute="centerY" secondItem="2Ed-T8-77Z" secondAttribute="centerY" id="npS-k6-VdY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="d8k-BU-eIY" secondAttribute="trailing" constant="-33" id="zp9-i5-aqR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="ADd-FN-5gw" kind="show" identifier="2006" id="Qwp-aP-vU9"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nt9-xo-2bW">
-                                        <rect key="frame" x="0.0" y="202" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="2007" id="nt9-xo-2bW">
+                                        <rect key="frame" x="0.0" y="187" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nt9-xo-2bW" id="EqL-mz-Kok">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2007" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOI-u9-Cno">
-                                                    <rect key="frame" x="8" y="11" width="583" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="40" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -86,12 +90,15 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="ADd-FN-5gw" kind="show" id="2xw-S1-TZg"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PgA-V8-k8f">
-                                        <rect key="frame" x="0.0" y="246" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="2008" id="PgA-V8-k8f">
+                                        <rect key="frame" x="0.0" y="231" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PgA-V8-k8f" id="RGd-5Y-Brz">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2008" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Nj-pj-2YZ">
@@ -105,16 +112,19 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="ADd-FN-5gw" kind="show" id="K8G-DF-ezM"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="D3v-tt-BL7">
-                                        <rect key="frame" x="0.0" y="290" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="2009" id="D3v-tt-BL7">
+                                        <rect key="frame" x="0.0" y="275" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D3v-tt-BL7" id="k2Z-iu-qIh">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2009" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLo-F2-aER">
-                                                    <rect key="frame" x="9" y="11" width="583" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="583" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -124,16 +134,19 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="ADd-FN-5gw" kind="show" id="hEK-X7-k3F"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6Cp-Bc-vZA">
-                                        <rect key="frame" x="0.0" y="334" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="2010" id="6Cp-Bc-vZA">
+                                        <rect key="frame" x="0.0" y="319" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Cp-Bc-vZA" id="tGw-hw-yxm">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2010" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivS-aW-obR">
-                                                    <rect key="frame" x="9" y="11" width="583" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="583" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -143,12 +156,15 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="ADd-FN-5gw" kind="show" identifier="2010" id="ueh-K8-GtX"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qrO-kr-hTq">
-                                        <rect key="frame" x="0.0" y="378" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="2011" id="qrO-kr-hTq">
+                                        <rect key="frame" x="0.0" y="363" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qrO-kr-hTq" id="u9b-4P-pq9">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2011" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rf-a3-BAs">
@@ -162,16 +178,19 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="ADd-FN-5gw" kind="show" id="3vi-ee-iCY"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Xdd-2n-p7U">
-                                        <rect key="frame" x="0.0" y="422" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="2012" id="Xdd-2n-p7U">
+                                        <rect key="frame" x="0.0" y="407" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xdd-2n-p7U" id="hDG-Hb-Vh6">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2012" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p16-3w-YTo">
-                                                    <rect key="frame" x="9" y="11" width="583" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="583" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -181,16 +200,19 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="ADd-FN-5gw" kind="show" id="pw8-ku-sZm"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vOT-MJ-89t">
-                                        <rect key="frame" x="0.0" y="466" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="2013" id="vOT-MJ-89t">
+                                        <rect key="frame" x="0.0" y="451" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vOT-MJ-89t" id="EQp-7Z-6jJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2013" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMe-nG-eR5">
-                                                    <rect key="frame" x="9" y="11" width="583" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="583" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -200,12 +222,15 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="ADd-FN-5gw" kind="show" identifier="2013" id="74A-ad-EQp"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fWa-Zz-rkL">
-                                        <rect key="frame" x="0.0" y="510" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="2014" id="fWa-Zz-rkL">
+                                        <rect key="frame" x="0.0" y="495" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fWa-Zz-rkL" id="KnE-l6-bMr">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2014" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZJ-5C-pHh">
@@ -219,12 +244,15 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="ADd-FN-5gw" kind="show" id="NL6-tf-Y9v"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="F6d-0n-t0O">
-                                        <rect key="frame" x="0.0" y="554" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="2015" id="F6d-0n-t0O">
+                                        <rect key="frame" x="0.0" y="539" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F6d-0n-t0O" id="vh2-Sb-Evn">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFX-1q-Wc1">
@@ -238,6 +266,9 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="ADd-FN-5gw" kind="show" id="iER-5c-J7y"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -247,11 +278,31 @@
                             <outlet property="delegate" destination="ksE-z2-9HD" id="xZl-7y-XXp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Scegli un anno per visualizzare le foto" id="wfg-Gh-aMu"/>
+                    <navigationItem key="navigationItem" title="Seleziona un anno per visualizzare le foto:" id="wfg-Gh-aMu"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSX-n5-A6T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="668" y="387"/>
+            <point key="canvasLocation" x="644" y="387"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="78W-lI-El5">
+            <objects>
+                <viewController id="ADd-FN-5gw" customClass="ImageViewController" customModule="PiCloudMediaLibrary_git" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ku4-w9-KMk"/>
+                        <viewControllerLayoutGuide type="bottom" id="1vo-qB-OwA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lsa-de-Vs7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2tO-sl-eXy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2LP-Bj-3Ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1098" y="1160"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nIG-b0-V7V">
@@ -273,4 +324,7 @@
             <point key="canvasLocation" x="-115" y="387"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ueh-K8-GtX"/>
+    </inferredMetricsTieBreakers>
 </document>

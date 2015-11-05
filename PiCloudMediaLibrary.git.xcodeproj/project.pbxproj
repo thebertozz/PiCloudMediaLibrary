@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7A0510F81BEBD22C00ED26DE /* YearsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0510F71BEBD22C00ED26DE /* YearsTableViewController.swift */; };
+		7A0510FA1BEBE71800ED26DE /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0510F91BEBE71800ED26DE /* ImageViewController.swift */; };
+		7A0510FC1BEBEB2C00ED26DE /* PiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0510FB1BEBEB2C00ED26DE /* PiURL.swift */; };
 		7AB26ABB1BEBCD620060443F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB26ABA1BEBCD620060443F /* AppDelegate.swift */; };
 		7AB26AC01BEBCD620060443F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB26ABE1BEBCD620060443F /* Main.storyboard */; };
 		7AB26AC21BEBCD630060443F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AB26AC11BEBCD630060443F /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 
 /* Begin PBXFileReference section */
 		7A0510F71BEBD22C00ED26DE /* YearsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearsTableViewController.swift; sourceTree = "<group>"; };
+		7A0510F91BEBE71800ED26DE /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		7A0510FB1BEBEB2C00ED26DE /* PiURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiURL.swift; sourceTree = "<group>"; };
 		7AB26AB71BEBCD620060443F /* PiCloudMediaLibrary.git.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiCloudMediaLibrary.git.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB26ABA1BEBCD620060443F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AB26ABF1BEBCD620060443F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 				7AB26ABA1BEBCD620060443F /* AppDelegate.swift */,
 				7A0510F71BEBD22C00ED26DE /* YearsTableViewController.swift */,
 				7AB26ABE1BEBCD620060443F /* Main.storyboard */,
+				7A0510F91BEBE71800ED26DE /* ImageViewController.swift */,
+				7A0510FB1BEBEB2C00ED26DE /* PiURL.swift */,
 				7AB26AC11BEBCD630060443F /* Assets.xcassets */,
 				7AB26AC31BEBCD630060443F /* LaunchScreen.storyboard */,
 				7AB26AC61BEBCD630060443F /* Info.plist */,
@@ -137,6 +143,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A0510F81BEBD22C00ED26DE /* YearsTableViewController.swift in Sources */,
+				7A0510FA1BEBE71800ED26DE /* ImageViewController.swift in Sources */,
+				7A0510FC1BEBEB2C00ED26DE /* PiURL.swift in Sources */,
 				7AB26ABB1BEBCD620060443F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
