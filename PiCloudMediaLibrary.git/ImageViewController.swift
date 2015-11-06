@@ -10,7 +10,11 @@ import UIKit
 
 class ImageViewController: UIViewController, UIScrollViewDelegate {
     
+    //Outlet per la gestione dello spinner
+    
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    //Outlet per la gestione della ScrollView
     
     @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
@@ -21,11 +25,18 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    //Impostazioni di zooming per la ScrollView
+    
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return imageView
     }
     
+    //Creazione della istanza della ImageView, si può fare anche da storyboard
+    
     private var imageView = UIImageView()
+    
+    //Computed property per la gestione dell'URL
+    //se l'immagine non è su schermo non viene caricata
     
     var imageURL: NSURL? {
         didSet {
@@ -35,6 +46,8 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             }
         }
     }
+    
+    //Computed property per la gestione dell'immagine
     
     private var image: UIImage? {
         get { return imageView.image }
@@ -46,6 +59,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    //Funzione per il caricamento dell'immagine dall'URL fornito
     
     private func fetchImage() {
         
@@ -66,6 +80,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         }
     }
 }
+    //Se esco e torno nella ImageView e l'immagine è nil, la carico
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -73,7 +88,9 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             fetchImage()
         }
     }
-
+    
+    //Funzioni di default 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.addSubview(imageView)
@@ -85,7 +102,6 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -95,5 +111,5 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
