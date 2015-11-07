@@ -10,10 +10,35 @@ import UIKit
 
 class ImageViewController: UIViewController, UIScrollViewDelegate {
     
+    //variabile per la gestione dell'array di immagini per lo swipe
+    
+    var imagesIndex = 0
+    
     //Outlet per la gestione dello spinner
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
+    //Action per la gestione dello swipe, per scorrere le immagini
+    
+    @IBAction func handleSwipe(sender: UISwipeGestureRecognizer) {
+     
+        
+        let swipeDirection = sender.direction
+        
+        switch swipeDirection {
+        case UISwipeGestureRecognizerDirection.Left:
+            imagesIndex--; print("Left")
+        case UISwipeGestureRecognizerDirection.Right:
+            imagesIndex++; print("Right")
+        default: break
+        }
+        print(imagesIndex)
+        imagesIndex = (imagesIndex < 0) ? (images.count-1): imagesIndex % images.count
+        imageView.image = images[imagesIndex]
+    
+    }
+    
+   
     //Outlet per la gestione della ScrollView
     
     @IBOutlet weak var scrollView: UIScrollView! {
@@ -57,9 +82,14 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     //Computed property per la gestione dell'immagine
     
     private var image: UIImage? {
-        get { return imageView.image }
+        get {
+            //imageView.image = images[imagesIndex]
+            return imageView.image
+        }
         set {
-            imageView.image = newValue
+            images.append(newValue)
+            imageView.image = images[imagesIndex]
+            imagesIndex = images.count
             imageView.sizeToFit()
             scrollView?.contentSize = imageView.frame.size
             spinner?.stopAnimating()
@@ -67,7 +97,6 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     }
     
     //Funzione per il caricamento dell'immagine dall'URL fornito
-    
     
     private func fetchImages(counter URLCounter: Int) {
         
@@ -80,15 +109,16 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
                     if url == self.imageURL[URLCounter] {
                 if imageData != nil {
                     //
-                    self.images.append(UIImage(data: imageData!))
+                    //self.images.append(UIImage(data: imageData!))
                     self.image = UIImage(data: imageData!)
+                    //self.images.append(self.image)
                     //imagesArray.append(self.image)
                     print(URLCounter)
                     print ("caricata immagine da URL: \(url)")
                     print("images.count:\(self.images.count)")
-                    } else {
-                        self.image = nil
-                    }
+                    } //else {
+                        //self.imagesIndex.
+                    //}
                 }
             }
         }
@@ -99,7 +129,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     
     func loadImagesArray() {
      
-        for var i = 0; i<2; ++i {
+        for var i = 0; i<3; ++i {
             print("i:\(i)")
             fetchImages(counter: i)
         }

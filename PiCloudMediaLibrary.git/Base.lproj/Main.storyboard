@@ -299,6 +299,11 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b70-cc-aYW">
                                 <rect key="frame" x="0.0" y="6" width="600" height="594"/>
                                 <animations/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="odj-G1-7s8" appends="YES" id="oA3-Mx-mwj"/>
+                                    <outletCollection property="gestureRecognizers" destination="mZf-aE-1Cj" appends="YES" id="zqU-pG-wu7"/>
+                                </connections>
                             </scrollView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Bsr-gt-VtS">
                                 <rect key="frame" x="290" y="290" width="20" height="20"/>
@@ -307,6 +312,7 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="b70-cc-aYW" firstAttribute="leading" secondItem="lsa-de-Vs7" secondAttribute="leading" id="00T-ms-rTK"/>
                             <constraint firstItem="b70-cc-aYW" firstAttribute="top" secondItem="lsa-de-Vs7" secondAttribute="topMargin" constant="6" id="4Ux-PV-BmF"/>
@@ -323,6 +329,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2LP-Bj-3Ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="odj-G1-7s8">
+                    <connections>
+                        <action selector="handleSwipe:" destination="ADd-FN-5gw" id="wqk-Ll-t0Y"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="mZf-aE-1Cj">
+                    <connections>
+                        <action selector="handleSwipe:" destination="ADd-FN-5gw" id="zf5-Y0-6x3"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1492" y="387"/>
         </scene>
