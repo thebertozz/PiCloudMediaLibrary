@@ -14,7 +14,6 @@
 		7AB26AC01BEBCD620060443F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB26ABE1BEBCD620060443F /* Main.storyboard */; };
 		7AB26AC21BEBCD630060443F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AB26AC11BEBCD630060443F /* Assets.xcassets */; };
 		7AB26AC51BEBCD630060443F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB26AC31BEBCD630060443F /* LaunchScreen.storyboard */; };
-		7ACADB2C1BED1834004626A1 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ACADB2B1BED1834004626A1 /* Photos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		7AB26AC11BEBCD630060443F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AB26AC41BEBCD630060443F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AB26AC61BEBCD630060443F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7ACADB2B1BED1834004626A1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +33,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7ACADB2C1BED1834004626A1 /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +42,6 @@
 		7AB26AAE1BEBCD620060443F = {
 			isa = PBXGroup;
 			children = (
-				7ACADB2B1BED1834004626A1 /* Photos.framework */,
 				7AB26AB91BEBCD620060443F /* PiCloudMediaLibrary.git */,
 				7AB26AB81BEBCD620060443F /* Products */,
 			);

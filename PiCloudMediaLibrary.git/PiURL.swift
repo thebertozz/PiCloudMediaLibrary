@@ -10,6 +10,6 @@ import Foundation
 
 struct PiURL {
     
-    static let duemilaDieci = NSURL(string: "http://192.168.0.21:9021/pictures/2010/1.jpg")
-    static let duemilaUndici = NSURL(string:"http://192.168.0.21:9021/pictures/2011/1.jpg")
+    static let duemilaDieci: [NSURL?] = [NSURL(string:"http://192.168.0.21:9021/pictures/2010/1.jpg"), NSURL(string:"http://192.168.0.21:9021/pictures/2010/2.jpg")]
+  
 }

@@ -41,10 +41,9 @@ class YearsTableViewController: UITableViewController {
         if let ivc = segue.destinationViewController as? ImageViewController {
             if let identifier = segue.identifier {
                 switch identifier {
-                case "2010": ivc.imageURL = PiURL.duemilaDieci
-                ivc.title = "Foto scattate nel 2010"
-                case "2011": ivc.imageURL = PiURL.duemilaUndici
-                ivc.title = "Foto scattate nel 2011"
+                case "2010":
+                    ivc.imageURL = PiURL.duemilaDieci
+                    ivc.title = "Foto scattate nel 2010"
                 default: break
                 }
             }

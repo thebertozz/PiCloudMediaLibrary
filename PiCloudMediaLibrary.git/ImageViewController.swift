@@ -38,15 +38,22 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     //Computed property per la gestione dell'URL
     //se l'immagine non è su schermo non viene caricata
     
-    var imageURL: NSURL? {
-        didSet {
+    var imageURL = [NSURL?]()
+    
+    /*
+    didSet {
             image = nil
             if view.window != nil {
-            fetchImage()
+            fetchImages(counter: 0)
             }
         }
-    }
+    */
     
+    //Array per contenere le immagini caricate dalla funzione fetchImages
+    
+    var images = [UIImage?]()
+
+
     //Computed property per la gestione dell'immagine
     
     private var image: UIImage? {
@@ -61,17 +68,24 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     
     //Funzione per il caricamento dell'immagine dall'URL fornito
     
-    private func fetchImage() {
+    
+    private func fetchImages(counter URLCounter: Int) {
         
-    if let url = imageURL {
+    if let url = imageURL[URLCounter] {
         spinner?.startAnimating()
         let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
         dispatch_async(dispatch_get_global_queue(qos, 0)) { () -> Void in
             let imageData = NSData(contentsOfURL: url)
             dispatch_async(dispatch_get_main_queue()) {
-                    if url == self.imageURL {
+                    if url == self.imageURL[URLCounter] {
                 if imageData != nil {
+                    //
+                    self.images.append(UIImage(data: imageData!))
                     self.image = UIImage(data: imageData!)
+                    //imagesArray.append(self.image)
+                    print(URLCounter)
+                    print ("caricata immagine da URL: \(url)")
+                    print("images.count:\(self.images.count)")
                     } else {
                         self.image = nil
                     }
@@ -80,12 +94,26 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         }
     }
 }
+    
+    //funzione per caricare l'array images con le immagini dai vari url 
+    
+    func loadImagesArray() {
+     
+        for var i = 0; i<2; ++i {
+            print("i:\(i)")
+            fetchImages(counter: i)
+        }
+    }
+    
+    
+    
     //Se esco e torno nella ImageView e l'immagine è nil, la carico
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if image == nil {
-            fetchImage()
+        if images.isEmpty {
+            //fetchImages(counter: 0, imagesArray: &images)
+            loadImagesArray()
         }
     }
     
@@ -94,6 +122,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.addSubview(imageView)
+        imageView.sizeToFit()
 
     }
 
