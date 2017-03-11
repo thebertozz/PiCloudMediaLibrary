@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class VideoTableViewController: UITableViewController {
 
@@ -24,17 +26,59 @@ class VideoTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let videoPlayer = segue.destination as? AVPlayerViewController {
+            if let identifier = segue.identifier {
+                do {
+                    try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+                    do {
+                        try AVAudioSession.sharedInstance().setActive(true)
+                    } catch let error as NSError {
+                        print(error.localizedDescription)
+                    }
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+                
+                switch identifier {
+                case "Uptown Funk":
+                    if UIDevice.current.userInterfaceIdiom == .pad {
+                        
+                        videoPlayer.player = AVPlayer(url: PiURL.UptownFunk)
+                    } else {
+                        
+                       videoPlayer.player = AVPlayer(url: PiURLNoIp.UptownFunk)
+                    }
+                case "Wind":
+                    
+                    if UIDevice.current.userInterfaceIdiom == .pad {
+                        
+                        videoPlayer.player = AVPlayer(url: PiURL.Wind)
+                    } else {
+                        
+                        videoPlayer.player = AVPlayer(url: PiURLNoIp.Wind)
+                    }
+
+                   
+                default: break
+                }
+            }
+        }
+        
+    }
+
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 6
     }
 
     /*

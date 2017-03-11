@@ -4,7 +4,7 @@
 //
 //  Created by Federico Bertoli on 05/11/15.
 //  Copyright © 2015 Federico Bertoli. All rights reserved.
-//
+/*
 
 import UIKit
 
@@ -27,9 +27,9 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         
         switch swipeDirection {
         case UISwipeGestureRecognizerDirection.Left:
-            imagesIndex--; print("Left")
+            imagesIndex--;
         case UISwipeGestureRecognizerDirection.Right:
-            imagesIndex++; print("Right")
+            imagesIndex++;
         default: break
         }
         imagesIndex = (imagesIndex < 0) ? (images.count-1): imagesIndex % images.count
@@ -87,9 +87,11 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         }
         set {
             images.append(newValue)
-            imageView.image = images[imagesIndex]
             imageView.sizeToFit()
+            imageView.image = images[imagesIndex]
+            
             scrollView?.contentSize = imageView.frame.size
+            
             spinner?.stopAnimating()
         }
     }
@@ -138,7 +140,33 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             //fetchImages(counter: 0, imagesArray: &images)
             loadImagesArray()
         }
+        //setImageViewFrame()
+        
     }
+    
+    func setImageViewFrame() {
+    
+        let svWidth = CGRectGetWidth(scrollView.frame)
+        let svHeight = CGRectGetHeight(scrollView.frame)
+        let imWidth = CGRectGetWidth(imageView.frame)
+        let imHeight = CGRectGetHeight(imageView.frame)
+        let widthRatio = svWidth / imWidth
+        let heightRatio = svHeight / imHeight
+        let ratio = min(widthRatio,heightRatio)
+        let newImageFrame = CGRectMake(0,0, imWidth * ratio, imHeight * ratio)
+        imageView.frame = newImageFrame
+     
+        let scrollViewCenterX = CGRectGetMidX(scrollView.bounds)
+        let scrollViewCenterY = Double(CGRectGetMidY(scrollView.bounds)) + Double(scrollView.contentInset.top/2)
+        imageView.center = CGPointMake(scrollViewCenterX, CGFloat(scrollViewCenterY))
+
+    
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        setImageViewFrame()
+    }
+  
     
     //Funzioni di default 
     
@@ -146,7 +174,6 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         scrollView.addSubview(imageView)
         imageView.sizeToFit()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -165,3 +192,4 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     */
     
 }
+*/

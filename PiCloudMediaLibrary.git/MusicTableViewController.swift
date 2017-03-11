@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
+import SystemConfiguration
 
 class MusicTableViewController: UITableViewController {
 
@@ -24,19 +27,62 @@ class MusicTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    var error: NSError?
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let audioPlayer = segue.destination as? AVPlayerViewController {
+            if let identifier = segue.identifier {
+                do {
+                    try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+                    do {
+                        try AVAudioSession.sharedInstance().setActive(true)
+                    } catch let error as NSError {
+                        print(error.localizedDescription)
+                    }
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+                switch identifier {
+                case "Big Data":
+                    
+                    if UIDevice.current.userInterfaceIdiom == .pad {
+                        audioPlayer.player = AVPlayer(url: PiURL.BigData)
+                        } else {
+                        
+                        audioPlayer.player = AVPlayer(url: PiURLNoIp.BigData)
+                    }
+                    
+                case "Lenny":
+                    
+                    if UIDevice.current.userInterfaceIdiom == .pad {
+                        audioPlayer.player = AVPlayer(url: PiURL.Lenny)
+                    } else {
+                        
+                        audioPlayer.player = AVPlayer(url: PiURLNoIp.Lenny)
+                    }
 
+                    
+                default: break
+                }
+            }
+        }
+        
+}
+    
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 16
     }
-
+    
+    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
